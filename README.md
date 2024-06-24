@@ -1,9 +1,9 @@
 
-##Learning Laravel
+# Learning Laravel
 
-##Clonar
+# Clonar
 assdasd
-##instalar dependecias
+# instalar dependecias
 asdasd
 ##Publicar asestrs
 php artisan vendor:publish --tag=laravel-assets --ansi --force
