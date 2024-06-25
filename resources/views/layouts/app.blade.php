@@ -9,19 +9,20 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    >
+    <link href="{{ asset('css/theme.min.css') }}" rel="stylesheet" />
+     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" />
+     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"/>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -79,5 +80,15 @@
             @yield('content')
         </main>
     </div>
+      <!-- Scripts -->
+       <script src="{{ asset('js/jquery.min.js') }}" ></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}" ></script>
+
+ <script src="{{ asset('js/theme.min.js') }}" ></script>
+ <script type="text/javascript">
+    $(document).ready(function() {
+       @yield('scripts')
+    });
+ </script>
 </body>
 </html>
