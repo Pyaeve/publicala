@@ -12,8 +12,8 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="<?php echo e(asset('css/font-awesome.css')); ?>" rel="stylesheet" />
+        <link href="<?php echo e(asset('css/material-icons.css')); ?>" rel="stylesheet" />
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark ticky-top bg-body-tertiary"
         data-bs-theme="dark">

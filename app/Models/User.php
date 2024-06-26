@@ -7,10 +7,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+//agregamos soft deleting
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
+
 
     /**
      * The attributes that are mass assignable.
@@ -18,6 +21,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        //agregamos masa campos para llenar
+        'sername',
+        'nickname',
         'name',
         'email',
         'password',

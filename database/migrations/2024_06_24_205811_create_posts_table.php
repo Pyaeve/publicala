@@ -15,9 +15,13 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->string('post');
+            $table->integer('user_id')->index();
+            $table->string('post',280);
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->softDeletes($column = 'deleted_at', $precision = 0);
+
+
         });
     }
 

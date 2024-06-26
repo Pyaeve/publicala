@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+App::setLocale('es');
 
 /*
 |--------------------------------------------------------------------------

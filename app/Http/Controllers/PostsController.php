@@ -38,6 +38,23 @@ class PostsController extends Controller
         //
     }
 
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store_ajax(Request $request)
+    {
+        //obtenemos los datos
+        $data = $request->all();
+
+
+
+    }
+
+
     /**
      * Display the specified resource.
      *

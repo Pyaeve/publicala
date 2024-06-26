@@ -2,7 +2,7 @@
 @section('content')
 <div class="container pt-4">
     <div class="row">
-        <div class="col-1 col-lg-1 col-xs-1 col-md-1">
+        <div class="col-2 col-lg-1 col-xs-2 col-sm-2 col-md-2">
             <div class="card ">
                 <div class="card-body ">
                     <ul class="nav nav-link-secondary justify-content-center">
@@ -28,7 +28,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <span>Settings</span></a>
+                                <span class="material-icons mi-user"></span></a>
                         </li>
                     </ul>
                 </div>
@@ -44,13 +44,19 @@
             </div>
             <h4> Share yours ideas </h4>
             <div class="row">
-                <div class="mb-3">
+                <div class="col-lg-12 col-md-12">
                     <textarea class="form-control" id="idea" rows="3"></textarea>
-                    <p id="limit_count">(280 / 280)</p>
+
                 </div>
-                <div class="">
-                    <button class="btn btn-dark"> Share </button>
-                </div>
+
+            </div>
+            <div class="row mt-1">
+
+                  <div class="col-lg-4 col-md-4 col-sm-4  col-xs-5 ">
+                    <a class="btn btn-sm btn-dark btn-send btn-sm  btn-md btn-sx "><i class="fa fa-paper-plane" aria-hidden="true"></i> Publicar
+                    </a>
+                    <i class="pe-1 text-end" id="limit_count">(280/280)</i>
+                  </div>
             </div>
             <hr>
             <div class="mt-3">
