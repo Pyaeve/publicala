@@ -35,3 +35,5 @@ Route::get('/profile', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//rutas para seguidores
+Route::get('/followers', [App\Http\Controllers\FollowersController::class, 'web_get_followers'])->name('frontend.followers');

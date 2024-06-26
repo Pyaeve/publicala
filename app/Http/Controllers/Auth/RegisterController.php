@@ -8,6 +8,8 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+//agregamos reglas customizada para validar Password
+use App\Rules\IsValidPassword;
 
 class RegisterController extends Controller
 {
@@ -55,7 +57,7 @@ class RegisterController extends Controller
             'sername' => ['required', 'string', 'max:255'],
             'nickname' => ['required', 'string', 'min:6', 'max:14', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8', 'confirmed', new isValidPassword()],
         ]);
     }
 
