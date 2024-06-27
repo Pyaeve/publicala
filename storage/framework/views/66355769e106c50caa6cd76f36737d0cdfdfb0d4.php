@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <title>Twitter Clone Bootstrap 5 Example</title>
 
     <link href="https://bootswatch.com/5/sketchy/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
@@ -80,6 +80,38 @@
       <script type="text/javascript">
          $(document).ready(function() {
             <?php echo $__env->yieldContent('scripts'); ?>
+            $('#idea').on('keyup',function() {
+
+$('#limit_count').html("("+$(this).val().length+" / 280)");
+
+if($(this).val().length > 280) {
+
+  $(this).val($(this).val().substring(0, 280));
+
+  $('#limit_count').html("(280 / 280)");
+
+}
+
+
+});
+
+
+$('.btn-start-follow').click(function(){
+
+var user_id = $(this).data('user');
+alert(user_id);
+$.ajax({
+url: "<?php echo route('frontend.ajax.follow.start'); ?>",
+type: "get",
+header: {'csrf-token':'<?php echo csrf_token(); ?>'},
+data: {'user_id': user_id},
+success: function(d) {
+alert(d);
+}
+});
+
+});
+
          });
       </script>
 </body>
