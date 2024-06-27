@@ -14,4 +14,4 @@ npm run dev
 # 6 Migrar la base de datos(sqlite)
 php artisan migrate
 # 7 Abrir url
-[Link text Here](http://localhost/publicala)
+[http://localhost/publicala](http://localhost/publicala)
