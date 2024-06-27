@@ -104,7 +104,7 @@ class FollowersController extends Controller
         $user_id =  $data['user_id'];
 
         $followto= User::where('id','=',$user_id)->get()->toArray();
-        $follow =  Followers::find(''$user_id);
+        $follow =  Followers::find($user_id);
 
         $follow->delete();
         return 'dejaste de seguir a @'.$followto[0]['nickname'];
