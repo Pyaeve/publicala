@@ -72,16 +72,7 @@ class FollowersController extends Controller
         dd($followings);
     }
 
-    // devuelve seguidores para api
-    public function web_get_who_follow(){
-        $user = Auth::user()->id;
-        //dd($user);
-        $followto = DB::select("SELECT t1.id AS USER_ID, t1.name AS USER_NAME, t1.sername AS USER_SERNAME, t1.nickname AS USER_NICKNAME, t1.email AS USER_EMAIL FROM users AS t1 WHERE t1.id NOT IN (SELECT t2.user_id FROM followers AS t2 WHERE t2.follower_id!=".$user.") ORDER BY t1.name ASC");
-
-        dd($followto);
-    }
-
-
+    //ajax para seguir
     public function ajax_action_start_follow(Request $req){
         $follow_id = Auth::user()->id;
         $data = $req->all();
@@ -97,7 +88,7 @@ class FollowersController extends Controller
 
 
     }
-
+//ajax para dejar de seguir
     public function ajax_action_stop_follow(Request $req){
         $follow_id = Auth::user()->id;
         $data = $req->all();
