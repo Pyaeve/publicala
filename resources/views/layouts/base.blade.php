@@ -97,7 +97,7 @@ if($(this).val().length > 280) {
 $('.btn-start-follow').click(function(){
 
 var user_id = $(this).data('user');
-alert(user_id);
+
 $.ajax({
 url: "{!! route('frontend.ajax.follow.start')!!}",
 type: "get",
@@ -109,6 +109,24 @@ alert(d);
 });
 
 });
+
+$('.btn-stop-follow').click(function(){
+
+var user_id = $(this).data('user');
+
+$.ajax({
+url: "{!! route('frontend.ajax.follow.stop')!!}",
+type: "get",
+header: {'csrf-token':'{!! csrf_token() !!}'},
+data: {'user_id': user_id},
+success: function(d) {
+alert(d);
+}
+});
+
+});
+
+
 
          });
       </script>

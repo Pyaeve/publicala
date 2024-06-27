@@ -85,14 +85,14 @@ class FollowersController extends Controller
     public function ajax_action_start_follow(Request $req){
         $follow_id = Auth::user()->id;
         $data = $req->all();
-     
+
         $user_id =  $data['user_id'];
         $follow = new Followers();
         $follow->user_id=$user_id;
         $follow->follower_id=$follow_id;
         $follow->save();
         $followto= User::where('id','=',$user_id)->get()->toArray();
-        
+
         return 'Siguiendo a @'.$followto[0]['nickname'];
 
 
@@ -101,11 +101,13 @@ class FollowersController extends Controller
     public function ajax_action_stop_follow(Request $req){
         $follow_id = Auth::user()->id;
         $data = $req->all();
-     
         $user_id =  $data['user_id'];
-        $follow =  Followers::find('follower_id', $user_id);
+
+        $followto= User::where('id','=',$user_id)->get()->toArray();
+        $follow =  Followers::find($user_id);
+dd($follow);
         $follow->remove();
-                return 'Siguiendo a '.Auth::user()->nickname;
+        return 'dejaste de seguir a @'.$followto[0]['nickname'];
 
     }
 
