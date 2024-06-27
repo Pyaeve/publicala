@@ -6,9 +6,10 @@
         <div class="col-8 col-lg-8 col-xs-8">
 
             <h4> Comparte alguna idea </h4>
+            <form action="<?php echo route('frontend.post.save'); ?>" type="post">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
-                    <textarea class="form-control" id="idea" rows="3"></textarea>
+                    <textarea class="form-control" name="post" id="idea" rows="3"></textarea>
 
                 </div>
 
@@ -16,11 +17,12 @@
             <div class="row mt-1">
 
                   <div class="col-lg-4 col-md-4 col-sm-4  col-xs-5 ">
-                    <a class="btn btn-sm btn-dark btn-send btn-sm  btn-md btn-sx "><i class="fa fa-paper-plane" aria-hidden="true"></i> Publicar
-                    </a>
+                    <button class="btn btn-sm btn-dark btn-send btn-sm  btn-md btn-sx "><i class="fa fa-paper-plane" aria-hidden="true"></i> Publicar
+                    </button>
                     <i class="pe-1 text-end" id="limit_count">(280/280)</i>
                   </div>
             </div>
+        </form>
             <hr>
             <div class="mt-3">
             <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -94,6 +96,7 @@
                     -->
                     </div>
                 </div>
+                <br>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
         </div>

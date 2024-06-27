@@ -12,7 +12,7 @@
                                 <span class="fa fa-2x fa-users "></span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{!! env('APP_URL') !!}/&#64;{!! Auth::user()->nickname !!}">
                                 <span class="fa fa-2x fa-user"></span></a>
                         </li>
 
