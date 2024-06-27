@@ -29,7 +29,7 @@ class HomeController extends Controller
         $user = Auth::user()->id;
         $followers = DB::select("SELECT t1.id AS USER_ID, t1.name AS USER_NAME, t1.sername AS USER_SERNAME, t1.nickname AS USER_NICKNAME, t1.email AS USER_EMAIL FROM users AS t1 INNER JOIN followers AS t2 ON t1.id==t2.follower_id WHERE t2.user_id=".$user." ORDER BY t1.name ASC");
         $followings = DB::select("SELECT t1.id AS USER_ID, t1.name AS USER_NAME, t1.sername AS USER_SERNAME, t1.nickname AS USER_NICKNAME, t1.email AS USER_EMAIL FROM users AS t1 INNER JOIN followers AS t2 ON t1.id==t2.user_id WHERE t2.follower_id=".$user." ORDER BY t1.name ASC");
-        $followto = DB::select("SELECT t1.id AS USER_ID, t1.name AS USER_NAME, t1.sername AS USER_SERNAME, t1.nickname AS USER_NICKNAME, t1.email AS USER_EMAIL FROM users AS t1 WHERE t1.id NOT IN (SELECT t2.follower_id FROM followers AS t2 WHERE t2.user_id=".$user.") AND t2.follower_id!=".$user." ORDER BY t1.name ASC");
+        $followto = DB::select("SELECT t1.id AS USER_ID, t1.name AS USER_NAME, t1.sername AS USER_SERNAME, t1.nickname AS USER_NICKNAME, t1.email AS USER_EMAIL FROM users AS t1 WHERE t1.id NOT IN (SELECT t2.follower_id FROM followers AS t2 WHERE t2.user_id=".$user.") AND t1.id!=".$user." ORDER BY t1.name ASC");
        //dd($followto);
         $total_followers = count($followers);
         $total_followings = count($followings);

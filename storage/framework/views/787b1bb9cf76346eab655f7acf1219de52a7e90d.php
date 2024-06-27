@@ -103,39 +103,5 @@
     </div>
 </div>
 <?php $__env->stopSection(); ?>
-<?php $__env->startSection('scripts'); ?>
-$('#idea').on('keyup',function() {
-
-        $('#limit_count').html("("+$(this).val().length+" / 280)");
-
-        if($(this).val().length > 280) {
-
-          $(this).val($(this).val().substring(0, 280));
-
-          $('#limit_count').html("(280 / 280)");
-
-        }
-
-
-      });
-
-
-$('.btn-follow').click(function(){
-
-   var user_id = $(this).data('user');
-   alert(user_id);
-   $.ajax({
-    url: "<?php echo route('frontend.ajax.follow.start'); ?>",
-    type: "get",
-    header: {'csrf-token':'<?php echo csrf_token(); ?>'},
-    data: {'user_id': user_id},
-    success: function(d) {
-        alert(d);
-    }
-});
-
-});
-
-<?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\server7\htdocs\publicala\resources\views/home.blade.php ENDPATH**/ ?>
