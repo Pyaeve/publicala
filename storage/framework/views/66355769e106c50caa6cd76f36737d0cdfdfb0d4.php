@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>Twitter Clone Bootstrap 5 Example</title>
+
+    <title><?php echo env('APP_NAME'); ?></title>
 
     <link href="https://bootswatch.com/5/sketchy/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
