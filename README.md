@@ -3,7 +3,7 @@
 Procedimientos para instalar
 # 1 Clonar Repo
 git clone https://github.com/Pyaeve/publicala.git
-# 2 instalar dependecias
+# 2 instalar dependencias
 composer install
 # 3 Publicar assetes
 php artisan vendor:publish --tag=laravel-assets --ansi --force
